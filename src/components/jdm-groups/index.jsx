@@ -859,7 +859,7 @@ const Footer = () => {
   );
 };
 
-// Main App Component
+
 const JDMLogisticsWebsite = () => {
   return (
     <div className="min-h-screen bg-white">
