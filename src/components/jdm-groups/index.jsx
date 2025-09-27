@@ -80,23 +80,25 @@ const Header = () => {
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-white shadow-lg" : "bg-white/95 backdrop-blur-sm"
       }`}
+      style={{ fontSize: "1.25rem" }} // Increase base font size
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24"> {/* Increased height */}
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection("#home")}
               className="flex items-center"
+              style={{ fontSize: "1.5rem" }} // Logo button larger
             >
               <img
                 src="/logo.png"
                 alt=""
-                className="w-20 h-20 object-contain bg-center rounded-full"
+                className="w-24 h-34 object-contain bg-center rounded-full" // Increased logo size
               />
             </button>
           </div>
 
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-10"> {/* Increased spacing */}
             {navigationItems.map((item) => {
               const sectionId = item.path.substring(1);
               const isActive = activeSection === sectionId;
@@ -104,7 +106,7 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.path)}
-                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`px-4 py-3 text-lg font-semibold transition-colors duration-200 ${
                     isActive
                       ? "text-orange-500 border-b-2 border-orange-500"
                       : "text-gray-700 hover:text-orange-500"
@@ -118,7 +120,7 @@ const Header = () => {
 
           <button
             onClick={() => scrollToSection("#contact")}
-            className="hidden md:inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition-colors duration-200"
+            className="hidden md:inline-flex items-center px-8 py-3 border border-transparent text-lg font-semibold rounded-md text-white bg-orange-500 hover:bg-orange-600 transition-colors duration-200"
           >
             Request a Rate
           </button>
@@ -126,12 +128,12 @@ const Header = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-orange-500 focus:outline-none"
+              className="inline-flex items-center justify-center p-3 rounded-md text-gray-700 hover:text-orange-500 focus:outline-none"
             >
               {isMenuOpen ? (
-                <XIcon className="block h-6 w-6" />
+                <XIcon className="block h-8 w-8" /> // Larger icon
               ) : (
-                <MenuIcon className="block h-6 w-6" />
+                <MenuIcon className="block h-8 w-8" /> // Larger icon
               )}
             </button>
           </div>
@@ -146,7 +148,7 @@ const Header = () => {
             : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+        <div className="px-4 pt-4 pb-5 space-y-2 sm:px-4 bg-white shadow-lg">
           {navigationItems.map((item) => {
             const sectionId = item.path.substring(1);
             const isActive = activeSection === sectionId;
@@ -154,7 +156,7 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.path)}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                className={`block w-full text-left px-4 py-3 rounded-md text-lg font-semibold ${
                   isActive
                     ? "bg-gray-100 text-orange-500"
                     : "text-gray-700 hover:bg-gray-50 hover:text-orange-500"
@@ -166,7 +168,7 @@ const Header = () => {
           })}
           <button
             onClick={() => scrollToSection("#contact")}
-            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-orange-500 hover:bg-orange-600"
+            className="block w-full text-left px-4 py-3 rounded-md text-lg font-semibold text-white bg-orange-500 hover:bg-orange-600"
           >
             Request a Rate
           </button>
